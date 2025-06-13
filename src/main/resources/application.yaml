@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring_jpa
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_jpa?createDatabaseIfNotExist=true
+    username: root
+    password: 9579
+  jpa:
+    show-sql: true
