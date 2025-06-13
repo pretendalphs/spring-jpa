@@ -1,14 +1,20 @@
 package com.one.spring_jpa.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.util.Objects;
 
+@Entity
 public class Student {
+    @Id
     private Integer id;
     private Integer age;
     private String firstName;
     private String lastName;
     private String email;
-
+    public Student() {
+    }
     public Student(Integer age,
                    String firstName,
                    String lastName,
@@ -70,4 +76,6 @@ public class Student {
     public int hashCode() {
         return Objects.hash(id, age, firstName, lastName, email);
     }
+
+
 }
