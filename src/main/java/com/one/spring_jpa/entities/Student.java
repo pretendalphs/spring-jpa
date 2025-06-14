@@ -44,13 +44,14 @@ public class Student {
     public Student() {
     }
 
-    public Student(Integer age,
-                   String firstName,
-                   String lastName,
-                   String email) {
-        this.age = age;
+    public Student(
+            String firstName,
+            String lastName,
+            Integer age,
+            String email) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.age = age;
         this.email = email;
     }
 
@@ -106,5 +107,14 @@ public class Student {
         return Objects.hash(id, age, firstName, lastName, email);
     }
 
-
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
