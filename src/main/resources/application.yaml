@@ -7,6 +7,8 @@ spring:
     password: 9579
     driver-class-name: org.postgresql.Driver
   jpa:
+    hibernate:
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate:

@@ -1,27 +1,49 @@
 package com.one.spring_jpa.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.Objects;
 
 import static jakarta.persistence.GenerationType.SEQUENCE;
 
 @Entity
+@Table(name = "student")
 public class Student {
     @Id
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    )
     @GeneratedValue(
-            strategy = SEQUENCE
+            strategy = SEQUENCE,
+            generator = "student_sequence"
     )
     private Integer id;
-    private Integer age;
+    @Column(
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
+
     private String firstName;
+    @Column(
+            columnDefinition = "TEXT"
+    )
     private String lastName;
+    @Column(
+            nullable = false
+    )
+    private Integer age;
+    @Column(
+            nullable = false,
+            unique = true,
+            columnDefinition = "TEXT"
+    )
     private String email;
+
     public Student() {
     }
+
     public Student(Integer age,
                    String firstName,
                    String lastName,
