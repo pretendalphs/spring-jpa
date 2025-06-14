@@ -2,11 +2,12 @@ spring:
   application:
     name: spring_jpa
   datasource:
-    url: jdbc:mysql://localhost:3306/spring_jpa?createDatabaseIfNotExist=true
-    username: root
+    url: jdbc:postgresql://localhost:5432/spring_jpa
+    username: abidk
     password: 9579
+    driver-class-name: org.postgresql.Driver
   jpa:
     show-sql: true
-    hibernate:
-      ddl-auto: update
-      format_sql: true
+    properties:
+      hibernate:
+        format_sql: true

@@ -1,13 +1,20 @@
 package com.one.spring_jpa.entities;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.Objects;
 
+import static jakarta.persistence.GenerationType.SEQUENCE;
+
 @Entity
 public class Student {
     @Id
+    @GeneratedValue(
+            strategy = SEQUENCE
+    )
     private Integer id;
     private Integer age;
     private String firstName;
